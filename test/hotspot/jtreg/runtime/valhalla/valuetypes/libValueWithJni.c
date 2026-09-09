@@ -28,7 +28,6 @@ Java_runtime_valhalla_valuetypes_ValueWithJni_doJniMonitorEnter(JNIEnv *env, job
     int ret = (*env)->MonitorEnter(env, obj);
     jclass class = (*env)->GetObjectClass(env, obj);
     jfieldID fieldId = (*env)->GetStaticFieldID(env, class, "returnValue", "I");
-    int ret = (*env)->MonitorEnter(env, obj);
     (*env)->SetStaticIntField(env, class, fieldId, ret);
 }
 
